@@ -10,26 +10,18 @@ namespace Snake
     {
         static void Main(string[] args)
         {
-            Point p1 = new Point(1, 3, '*');
-            p1.Draw();
+            
+            HorizontalLine LineUp = new HorizontalLine(1, Console.BufferWidth - 1, 1, '+');
+            LineUp.DrawLine();
 
+            HorizontalLine LineDown = new HorizontalLine(1, Console.BufferWidth - 1, 23, '+');
+            LineDown.DrawLine();
 
-            Point p2 = new Point(4, 5, '#');
-            p2.Draw();
+            VerticalLine LineLeft = new VerticalLine(1, 23, 1, '+');
+            LineLeft.DrawLine();
 
-            List<int> NumList = new List<int>();
-            NumList.Add(0);
-            NumList.Add(1);
-            NumList.Add(2);
-
-            int x = NumList[0];
-            int y = NumList[1];
-            int z = NumList[2];
-
-            foreach(int i in NumList)
-            {
-                Console.WriteLine(i);
-            }
+            VerticalLine LineRight = new VerticalLine(1, 23, Console.BufferWidth - 2, '+');
+            LineRight.DrawLine();
 
             Console.ReadLine();
         }
