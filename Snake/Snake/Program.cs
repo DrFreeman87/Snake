@@ -13,10 +13,10 @@ namespace Snake
         {
             
             //Отрисовка рамки
-            HorizontalLine LineUp = new HorizontalLine(1, Console.BufferWidth - 1, 1, '+');
-            HorizontalLine LineDown = new HorizontalLine(1, Console.BufferWidth - 1, 23, '+');
+            HorizontalLine LineUp = new HorizontalLine(1, 80 - 1, 1, '+');
+            HorizontalLine LineDown = new HorizontalLine(1, 80 - 1, 23, '+');
             VerticalLine LineLeft = new VerticalLine(1, 23, 1, '+');
-            VerticalLine LineRight = new VerticalLine(1, 23, Console.BufferWidth - 2, '+');
+            VerticalLine LineRight = new VerticalLine(1, 23, 80 - 2, '+');
             LineRight.DrawLine();
             LineLeft.DrawLine();
             LineUp.DrawLine();
@@ -28,8 +28,22 @@ namespace Snake
 
             snake1.DrawLine();
 
+            //Создаем еду
+            FoodCreator foodCreator = new FoodCreator(40, 23, '$');
+            Point food = foodCreator.CreateFood();
+            food.Draw();
+
+
+            //Движение змейки
             while (true)
             {
+                if (snake1.Eat(food))
+                {
+                    food = foodCreator.CreateFood();
+                    food.Draw();
+                }
+                else
+                    snake1.Move();
                 if (Console.KeyAvailable)
                 {
                     ConsoleKeyInfo key = Console.ReadKey();
@@ -50,7 +64,7 @@ namespace Snake
                         snake1.direction = Direction.DOWN;
                     }
                 }
-                Thread.Sleep(100);
+                Thread.Sleep(200);
                 snake1.Move();
             }
 
