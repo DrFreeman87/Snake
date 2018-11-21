@@ -4,3 +4,4 @@ C:\Users\Vurdalak\Desktop\VisualStudio\Snake\Snake\Snake\bin\Debug\Snake.pdb
 C:\Users\Vurdalak\Desktop\VisualStudio\Snake\Snake\Snake\obj\Debug\Snake.csproj.CoreCompileInputs.cache
 C:\Users\Vurdalak\Desktop\VisualStudio\Snake\Snake\Snake\obj\Debug\Snake.exe
 C:\Users\Vurdalak\Desktop\VisualStudio\Snake\Snake\Snake\obj\Debug\Snake.pdb
+C:\Users\Vurdalak\Desktop\VisualStudio\Snake\Snake\Snake\obj\Debug\Snake.csprojAssemblyReference.cache
